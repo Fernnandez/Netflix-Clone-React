@@ -1,4 +1,7 @@
+
 <h1 align="center">
+  Netflix UI Clone ReactJs
+</h1><h1 align="center">
   <img alt="Logo-Netflix" title="Logo-Netflix" src=".github/Netflix-new-icon.png" width="220px" />
 </h1>
 
