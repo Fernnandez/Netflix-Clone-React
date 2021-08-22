@@ -5,6 +5,7 @@ import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
 import Header from "./components/Header";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
@@ -45,28 +46,23 @@ export default () => {
 
   return (
     <div className="page">
-      {/* Header */}
-      <Header black={blackHeader}/>
-      {/* Destaque */}
-      {featuredData &&
-      <FeaturedMovie item={featuredData}/>
-      }
-      {/* Listas */}
-      {featuredData &&
-        <section className="lists">
-        {movieList.map((item, key)=>(
-          <MovieRow key={key} title={item.title} items={item.items}/>
-        ))}
-        </section>
-      }
+      <Header />
+      {featuredData && (
+        <> 
+          <FeaturedMovie item={featuredData}/>
+          <section className="lists">
+          {movieList.map((item, key)=>(
+            <MovieRow key={key} title={item.title} items={item.items}/>
+          ))}
+          </section>
+          <footer>
+            Feito com <span role="img" aria-label="coração"> ❤️ </span> Por Angelo Fernandes <br/>
+            Direitos de imagem para Netflix<br/>
+            Dados pegos do site Themoviedb.org
+          </footer>
+        </>
+      )
 
-      {/* Footer */}
-      {featuredData &&
-        <footer>
-          Feito com <span role="img" aria-label="coração"> ❤️ </span> Por Angelo Fernandes <br/>
-          Direitos de imagem para Netflix<br/>
-          Dados pegos do site Themoviedb.org
-        </footer>
       }
       {/* se nenhum filme foi carregado aparece o loading */}
       {movieList.length <= 0 &&

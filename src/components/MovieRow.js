@@ -3,6 +3,7 @@ import "./MovieRow.css";
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ title, items }) => {
 
   const [scrollX, setScrollX] = useState(0); 
